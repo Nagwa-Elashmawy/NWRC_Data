@@ -10,8 +10,6 @@
         <link rel="stylesheet" href="css/L.Control.Layers.Tree.css">
         <link rel="stylesheet" href="css/qgis2web.css">
         <link rel="stylesheet" href="css/fontawesome-all.min.css">
-        <link rel="stylesheet" href="css/filter.css">
-<link rel="stylesheet" href="css/nouislider.min.css">
         <style>
         html, body, #map {
             width: 100%;
@@ -35,14 +33,12 @@
         <script src="js/rbush.min.js"></script>
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
-        <script src="js/tailDT.js"></script>
-<script src="js/nouislider.min.js"></script>
-<script src="js/wNumb.js"></script>
-        <script src="data/NWRC_2025_1.js"></script>
+        <script src="data/ECRI_20250422_1.js"></script>
+        <script src="data/RIGW_20250417_2.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[5.900456268020668,25.57682556529495],[43.04252212727405,58.818348837908566]]);
+        }).fitBounds([[9.988562833685632,22.28858746094987],[39.95117077955598,62.10658694225373]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -93,56 +89,49 @@
         });
         layer_GoogleMap_0;
         map.addLayer(layer_GoogleMap_0);
-        function pop_NWRC_2025_1(feature, layer) {
+        function pop_ECRI_20250422_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2"><strong>institute</strong><br />' + (feature.properties['institute'] !== null ? autolinker.link(String(feature.properties['institute']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Institute'] !== null ? autolinker.link(String(feature.properties['Institute']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['project_nu'] !== null ? autolinker.link(String(feature.properties['project_nu']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Project_Nu'] !== null ? autolinker.link(String(feature.properties['Project_Nu']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['point_code'] !== null ? autolinker.link(String(feature.properties['point_code']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Point_Code'] !== null ? autolinker.link(String(feature.properties['Point_Code']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['long__x_'] !== null ? autolinker.link(String(feature.properties['long__x_']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Long___X_'] !== null ? autolinker.link(String(feature.properties['Long___X_']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['lat__y_'] !== null ? autolinker.link(String(feature.properties['lat__y_']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Lat___Y_'] !== null ? autolinker.link(String(feature.properties['Lat___Y_']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">data_type</th>\
-                        <td>' + (feature.properties['data_type'] !== null ? autolinker.link(String(feature.properties['data_type']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Coordinatr'] !== null ? autolinker.link(String(feature.properties['Coordinatr']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">detailed_d</th>\
-                        <td class="visible-with-data" id="detailed_d">' + (feature.properties['detailed_d'] !== null ? autolinker.link(String(feature.properties['detailed_d']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Data_Type'] !== null ? autolinker.link(String(feature.properties['Data_Type']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">units</th>\
-                        <td class="visible-with-data" id="units">' + (feature.properties['units'] !== null ? autolinker.link(String(feature.properties['units']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Detailed_D'] !== null ? autolinker.link(String(feature.properties['Detailed_D']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">date_year</th>\
-                        <td class="visible-with-data" id="date_year">' + (feature.properties['date_year'] !== null ? autolinker.link(String(feature.properties['date_year']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Units'] !== null ? autolinker.link(String(feature.properties['Units']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">frequency</th>\
-                        <td class="visible-with-data" id="frequency">' + (feature.properties['frequency'] !== null ? autolinker.link(String(feature.properties['frequency']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Date_Year'] !== null ? autolinker.link(String(feature.properties['Date_Year']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">data_sourc</th>\
-                        <td class="visible-with-data" id="data_sourc">' + (feature.properties['data_sourc'] !== null ? autolinker.link(String(feature.properties['data_sourc']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Frequency'] !== null ? autolinker.link(String(feature.properties['Frequency']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">study_type</th>\
-                        <td class="visible-with-data" id="study_type">' + (feature.properties['study_type'] !== null ? autolinker.link(String(feature.properties['study_type']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Data_Sourc'] !== null ? autolinker.link(String(feature.properties['Data_Sourc']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['vector_typ'] !== null ? autolinker.link(String(feature.properties['vector_typ']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Study_Type'] !== null ? autolinker.link(String(feature.properties['Study_Type']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['vectore_ty'] !== null ? autolinker.link(String(feature.properties['vectore_ty']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Vectore_ty'] !== null ? autolinker.link(String(feature.properties['Vectore_ty']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -152,12 +141,10 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_NWRC_2025_1_0(feature) {
-            switch(String(feature.properties['institute'])) {
-                case 'CoRI':
-                    return {
-                pane: 'pane_NWRC_2025_1',
-                radius: 2.0,
+        function style_ECRI_20250422_1_0() {
+            return {
+                pane: 'pane_ECRI_20250422_1',
+                radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -166,194 +153,121 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(223,162,29,1.0)',
+                fillColor: 'rgba(145,82,45,1.0)',
                 interactive: true,
-            }
-                    break;
-                case 'DRI':
-                    return {
-                pane: 'pane_NWRC_2025_1',
-                radius: 2.0,
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(79,84,236,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'ECRI':
-                    return {
-                pane: 'pane_NWRC_2025_1',
-                radius: 2.0,
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(182,212,85,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'HRI':
-                    return {
-                pane: 'pane_NWRC_2025_1',
-                radius: 2.0,
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(134,187,224,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'MERI':
-                    return {
-                pane: 'pane_NWRC_2025_1',
-                radius: 2.0,
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(90,231,137,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'NRI':
-                    return {
-                pane: 'pane_NWRC_2025_1',
-                radius: 2.0,
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(207,27,99,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'RIGW':
-                    return {
-                pane: 'pane_NWRC_2025_1',
-                radius: 2.0,
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(209,66,202,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'SRI':
-                    return {
-                pane: 'pane_NWRC_2025_1',
-                radius: 2.0,
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(203,68,48,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'SRU':
-                    return {
-                pane: 'pane_NWRC_2025_1',
-                radius: 2.0,
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(46,212,193,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'WMRI':
-                    return {
-                pane: 'pane_NWRC_2025_1',
-                radius: 2.0,
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(108,239,71,1.0)',
-                interactive: true,
-            }
-                    break;
-                default:
-                    return {
-                pane: 'pane_NWRC_2025_1',
-                radius: 2.0,
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(151,81,221,1.0)',
-                interactive: true,
-            }
-                    break;
             }
         }
-        map.createPane('pane_NWRC_2025_1');
-        map.getPane('pane_NWRC_2025_1').style.zIndex = 401;
-        map.getPane('pane_NWRC_2025_1').style['mix-blend-mode'] = 'normal';
-        var layer_NWRC_2025_1 = new L.geoJson(json_NWRC_2025_1, {
+        map.createPane('pane_ECRI_20250422_1');
+        map.getPane('pane_ECRI_20250422_1').style.zIndex = 401;
+        map.getPane('pane_ECRI_20250422_1').style['mix-blend-mode'] = 'normal';
+        var layer_ECRI_20250422_1 = new L.geoJson(json_ECRI_20250422_1, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_NWRC_2025_1',
-            layerName: 'layer_NWRC_2025_1',
-            pane: 'pane_NWRC_2025_1',
-            onEachFeature: pop_NWRC_2025_1,
+            dataVar: 'json_ECRI_20250422_1',
+            layerName: 'layer_ECRI_20250422_1',
+            pane: 'pane_ECRI_20250422_1',
+            onEachFeature: pop_ECRI_20250422_1,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_NWRC_2025_1_0(feature));
+                return L.circleMarker(latlng, style_ECRI_20250422_1_0(feature));
             },
         });
-        bounds_group.addLayer(layer_NWRC_2025_1);
-        map.addLayer(layer_NWRC_2025_1);
+        bounds_group.addLayer(layer_ECRI_20250422_1);
+        map.addLayer(layer_ECRI_20250422_1);
+        function pop_RIGW_20250417_2(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Institute'] !== null ? autolinker.link(String(feature.properties['Institute']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Project_Nu'] !== null ? autolinker.link(String(feature.properties['Project_Nu']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Point_Code'] !== null ? autolinker.link(String(feature.properties['Point_Code']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Long___X_'] !== null ? autolinker.link(String(feature.properties['Long___X_']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Lat___Y_'] !== null ? autolinker.link(String(feature.properties['Lat___Y_']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Coordinatr'] !== null ? autolinker.link(String(feature.properties['Coordinatr']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Data_Type'] !== null ? autolinker.link(String(feature.properties['Data_Type']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Detailed_D'] !== null ? autolinker.link(String(feature.properties['Detailed_D']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Units'] !== null ? autolinker.link(String(feature.properties['Units']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Date_Year'] !== null ? autolinker.link(String(feature.properties['Date_Year']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Frequency'] !== null ? autolinker.link(String(feature.properties['Frequency']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Data_Sourc'] !== null ? autolinker.link(String(feature.properties['Data_Sourc']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Study_Type'] !== null ? autolinker.link(String(feature.properties['Study_Type']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Vectore_ty'] !== null ? autolinker.link(String(feature.properties['Vectore_ty']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        function style_RIGW_20250417_2_0() {
+            return {
+                pane: 'pane_RIGW_20250417_2',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(229,182,54,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_RIGW_20250417_2');
+        map.getPane('pane_RIGW_20250417_2').style.zIndex = 402;
+        map.getPane('pane_RIGW_20250417_2').style['mix-blend-mode'] = 'normal';
+        var layer_RIGW_20250417_2 = new L.geoJson(json_RIGW_20250417_2, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_RIGW_20250417_2',
+            layerName: 'layer_RIGW_20250417_2',
+            pane: 'pane_RIGW_20250417_2',
+            onEachFeature: pop_RIGW_20250417_2,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_RIGW_20250417_2_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_RIGW_20250417_2);
+        map.addLayer(layer_RIGW_20250417_2);
         var overlaysTree = [
-            {label: 'NWRC_2025<br /><table><tr><td style="text-align: center;"><img src="legend/NWRC_2025_1_CoRI0.png" /></td><td>CoRI</td></tr><tr><td style="text-align: center;"><img src="legend/NWRC_2025_1_DRI1.png" /></td><td>DRI</td></tr><tr><td style="text-align: center;"><img src="legend/NWRC_2025_1_ECRI2.png" /></td><td>ECRI</td></tr><tr><td style="text-align: center;"><img src="legend/NWRC_2025_1_HRI3.png" /></td><td>HRI</td></tr><tr><td style="text-align: center;"><img src="legend/NWRC_2025_1_MERI4.png" /></td><td>MERI</td></tr><tr><td style="text-align: center;"><img src="legend/NWRC_2025_1_NRI5.png" /></td><td>NRI</td></tr><tr><td style="text-align: center;"><img src="legend/NWRC_2025_1_RIGW6.png" /></td><td>RIGW</td></tr><tr><td style="text-align: center;"><img src="legend/NWRC_2025_1_SRI7.png" /></td><td>SRI</td></tr><tr><td style="text-align: center;"><img src="legend/NWRC_2025_1_SRU8.png" /></td><td>SRU</td></tr><tr><td style="text-align: center;"><img src="legend/NWRC_2025_1_WMRI9.png" /></td><td>WMRI</td></tr><tr><td style="text-align: center;"><img src="legend/NWRC_2025_1_10.png" /></td><td></td></tr></table>', layer: layer_NWRC_2025_1},
+            {label: '<img src="legend/RIGW_20250417_2.png" /> RIGW_20250417', layer: layer_RIGW_20250417_2},
+            {label: '<img src="legend/ECRI_20250422_1.png" /> ECRI_20250422', layer: layer_ECRI_20250422_1},
             {label: "Google Map", layer: layer_GoogleMap_0, radioGroup: 'bm' },]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
@@ -416,154 +330,6 @@
             }  
         });       
         setBounds();
-        var mapDiv = document.getElementById('map');
-        var row = document.createElement('div');
-        row.className="row";
-        row.id="all";
-        row.style.height = "100%";
-        var col1 = document.createElement('div');
-        col1.className="col9";
-        col1.id = "mapWindow";
-        col1.style.height = "99%";
-        col1.style.width = "80%";
-        col1.style.display = "inline-block";
-        var col2 = document.createElement('div');
-        col2.className="col3";
-        col2.id = "menu";
-        col2.style.display = "inline-block";
-        mapDiv.parentNode.insertBefore(row, mapDiv);
-        document.getElementById("all").appendChild(col1);
-        document.getElementById("all").appendChild(col2);
-        col1.appendChild(mapDiv)
-        var Filters = {"institute": "str"};
-        function filterFunc() {
-          map.eachLayer(function(lyr){
-          if ("options" in lyr && "dataVar" in lyr["options"]){
-            features = this[lyr["options"]["dataVar"]].features.slice(0);
-            try{
-              for (key in Filters){
-                keyS = key.replace(/[^a-zA-Z0-9_]/g, "")
-                if (Filters[key] == "str" || Filters[key] == "bool"){
-                  var selection = [];
-                  var options = document.getElementById("sel_" + keyS).options
-                  for (var i=0; i < options.length; i++) {
-                    if (options[i].selected) selection.push(options[i].value);
-                  }
-                    try{
-                      if (key in features[0].properties){
-                        for (i = features.length - 1;
-                          i >= 0; --i){
-                          if (selection.indexOf(
-                          features[i].properties[key])<0
-                          && selection.length>0) {
-                          features.splice(i,1);
-                          }
-                        }
-                      }
-                    } catch(err){
-                  }
-                }
-                if (Filters[key] == "int"){
-                  sliderVals =  document.getElementById(
-                    "div_" + keyS).noUiSlider.get();
-                  try{
-                    if (key in features[0].properties){
-                    for (i = features.length - 1; i >= 0; --i){
-                      if (parseInt(features[i].properties[key])
-                          < sliderVals[0]
-                          || parseInt(features[i].properties[key])
-                          > sliderVals[1]){
-                            features.splice(i,1);
-                          }
-                        }
-                      }
-                    } catch(err){
-                    }
-                  }
-                if (Filters[key] == "real"){
-                  sliderVals =  document.getElementById(
-                    "div_" + keyS).noUiSlider.get();
-                  try{
-                    if (key in features[0].properties){
-                    for (i = features.length - 1; i >= 0; --i){
-                      if (features[i].properties[key]
-                          < sliderVals[0]
-                          || features[i].properties[key]
-                          > sliderVals[1]){
-                            features.splice(i,1);
-                          }
-                        }
-                      }
-                    } catch(err){
-                    }
-                  }
-                if (Filters[key] == "date"
-                  || Filters[key] == "datetime"
-                  || Filters[key] == "time"){
-                  try{
-                    if (key in features[0].properties){
-                      HTMLkey = key.replace(/[&\/\\#,+()$~%.'":*?<>{} ]/g, '');
-                      startdate = document.getElementById("dat_" +
-                        HTMLkey + "_date1").value.replace(" ", "T");
-                      enddate = document.getElementById("dat_" +
-                        HTMLkey + "_date2").value.replace(" ", "T");
-                      for (i = features.length - 1; i >= 0; --i){
-                        if (features[i].properties[key] < startdate
-                          || features[i].properties[key] > enddate){
-                          features.splice(i,1);
-                        }
-                      }
-                    }
-                  } catch(err){
-                  }
-                }
-              }
-            } catch(err){
-            }
-          this[lyr["options"]["layerName"]].clearLayers();
-          this[lyr["options"]["layerName"]].addData(features);
-          }
-          })
-        }
-            document.getElementById("menu").appendChild(
-                document.createElement("div"));
-            var div_institute = document.createElement('div');
-            div_institute.id = "div_institute";
-            div_institute.className= "filterselect";
-            document.getElementById("menu").appendChild(div_institute);
-            sel_institute = document.createElement('select');
-            sel_institute.multiple = true;
-            sel_institute.size = 10;
-            sel_institute.id = "sel_institute";
-            var institute_options_str = "<option value='' unselected></option>";
-            sel_institute.onchange = function(){filterFunc()};
-            institute_options_str  += '<option value="CoRI">CoRI</option>';
-            institute_options_str  += '<option value="DRI">DRI</option>';
-            institute_options_str  += '<option value="ECRI">ECRI</option>';
-            institute_options_str  += '<option value="HRI">HRI</option>';
-            institute_options_str  += '<option value="MERI">MERI</option>';
-            institute_options_str  += '<option value="NRI">NRI</option>';
-            institute_options_str  += '<option value="RIGW">RIGW</option>';
-            institute_options_str  += '<option value="SRI">SRI</option>';
-            institute_options_str  += '<option value="SRU">SRU</option>';
-            institute_options_str  += '<option value="WMRI">WMRI</option>';
-            sel_institute.innerHTML = institute_options_str;
-            div_institute.appendChild(sel_institute);
-            var lab_institute = document.createElement('div');
-            lab_institute.innerHTML = 'institute';
-            lab_institute.className = 'filterlabel';
-            div_institute.appendChild(lab_institute);
-            var reset_institute = document.createElement('div');
-            reset_institute.innerHTML = 'clear filter';
-            reset_institute.className = 'filterlabel';
-            reset_institute.onclick = function() {
-                var options = document.getElementById("sel_institute").options;
-                for (var i=0; i < options.length; i++) {
-                    options[i].selected = false;
-                }
-                filterFunc();
-            };
-            div_institute.appendChild(reset_institute);
         </script>
     </body>
 </html>
