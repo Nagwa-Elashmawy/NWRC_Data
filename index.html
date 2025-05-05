@@ -29,6 +29,7 @@
         <script src="js/qgis2web_expressions.js"></script>
         <script src="js/leaflet.js"></script>
         <script src="js/L.Control.Layers.Tree.min.js"></script>
+        <script src="js/leaflet-svg-shape-markers.min.js"></script>
         <script src="js/leaflet.rotatedMarker.js"></script>
         <script src="js/leaflet.pattern.js"></script>
         <script src="js/leaflet-hash.js"></script>
@@ -148,8 +149,14 @@
                 case 'ECRI':
                     return {
                 pane: 'pane_Some_NWRC_2025_1',
-                radius: 4.0,
-                stroke: false,
+                shape: 'diamond',
+                radius: 8.8,
+                opacity: 1,
+                color: 'rgba(61,128,53,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(85,203,16,1.0)',
@@ -159,8 +166,14 @@
                 case 'HRI':
                     return {
                 pane: 'pane_Some_NWRC_2025_1',
-                radius: 4.0,
-                stroke: false,
+                shape: 'diamond',
+                radius: 8.8,
+                opacity: 1,
+                color: 'rgba(61,128,53,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(234,225,62,1.0)',
@@ -170,8 +183,14 @@
                 case 'MERI':
                     return {
                 pane: 'pane_Some_NWRC_2025_1',
-                radius: 4.0,
-                stroke: false,
+                shape: 'diamond',
+                radius: 8.8,
+                opacity: 1,
+                color: 'rgba(61,128,53,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(126,162,225,1.0)',
@@ -181,8 +200,14 @@
                 case 'NRI':
                     return {
                 pane: 'pane_Some_NWRC_2025_1',
-                radius: 4.0,
-                stroke: false,
+                shape: 'diamond',
+                radius: 8.8,
+                opacity: 1,
+                color: 'rgba(61,128,53,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(152,121,229,1.0)',
@@ -192,8 +217,14 @@
                 case 'RIGW':
                     return {
                 pane: 'pane_Some_NWRC_2025_1',
-                radius: 4.0,
-                stroke: false,
+                shape: 'diamond',
+                radius: 8.8,
+                opacity: 1,
+                color: 'rgba(61,128,53,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(228,138,102,1.0)',
@@ -203,8 +234,14 @@
                 case 'SRI':
                     return {
                 pane: 'pane_Some_NWRC_2025_1',
-                radius: 4.0,
-                stroke: false,
+                shape: 'diamond',
+                radius: 8.8,
+                opacity: 1,
+                color: 'rgba(61,128,53,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(206,48,214,1.0)',
@@ -214,8 +251,14 @@
                 case 'SRU':
                     return {
                 pane: 'pane_Some_NWRC_2025_1',
-                radius: 4.0,
-                stroke: false,
+                shape: 'diamond',
+                radius: 8.8,
+                opacity: 1,
+                color: 'rgba(61,128,53,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(203,83,129,1.0)',
@@ -225,8 +268,14 @@
                 case 'WMRI':
                     return {
                 pane: 'pane_Some_NWRC_2025_1',
-                radius: 4.0,
-                stroke: false,
+                shape: 'diamond',
+                radius: 8.8,
+                opacity: 1,
+                color: 'rgba(61,128,53,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(114,219,146,1.0)',
@@ -236,8 +285,14 @@
                 default:
                     return {
                 pane: 'pane_Some_NWRC_2025_1',
-                radius: 4.0,
-                stroke: false,
+                shape: 'diamond',
+                radius: 8.8,
+                opacity: 1,
+                color: 'rgba(61,128,53,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(59,209,204,1.0)',
@@ -261,7 +316,7 @@
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_Some_NWRC_2025_1_0(feature));
+                return L.shapeMarker(latlng, style_Some_NWRC_2025_1_0(feature));
             },
         });
         var cluster_Some_NWRC_2025_1 = new L.MarkerClusterGroup({showCoverageOnHover: false,
