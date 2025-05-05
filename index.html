@@ -109,6 +109,10 @@
                         <td>' + (feature.properties['Project_Nu'] !== null ? autolinker.link(String(feature.properties['Project_Nu']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
+                        <th scope="row">Proj_Name</th>\
+                        <td>' + (feature.properties['Proj_Name'] !== null ? autolinker.link(String(feature.properties['Proj_Name']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
                         <th scope="row">Data_Type</th>\
                         <td>' + (feature.properties['Data_Type'] !== null ? autolinker.link(String(feature.properties['Data_Type']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
@@ -125,16 +129,14 @@
                         <td>' + (feature.properties['Date_Year'] !== null ? autolinker.link(String(feature.properties['Date_Year']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Frequency</th>\
-                        <td>' + (feature.properties['Frequency'] !== null ? autolinker.link(String(feature.properties['Frequency']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Frecuency'] !== null ? autolinker.link(String(feature.properties['Frecuency']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Study_Type</th>\
                         <td>' + (feature.properties['Study_Type'] !== null ? autolinker.link(String(feature.properties['Study_Type']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Proj_Name</th>\
-                        <td>' + (feature.properties['Proj_Name'] !== null ? autolinker.link(String(feature.properties['Proj_Name']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Vect_Ty'] !== null ? autolinker.link(String(feature.properties['Vect_Ty']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -152,11 +154,11 @@
                 shape: 'diamond',
                 radius: 8.8,
                 opacity: 1,
-                color: 'rgba(61,128,53,1.0)',
+                color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 2.0,
+                weight: 1,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(85,203,16,1.0)',
@@ -169,11 +171,11 @@
                 shape: 'diamond',
                 radius: 8.8,
                 opacity: 1,
-                color: 'rgba(61,128,53,1.0)',
+                color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 2.0,
+                weight: 1,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(234,225,62,1.0)',
@@ -186,11 +188,11 @@
                 shape: 'diamond',
                 radius: 8.8,
                 opacity: 1,
-                color: 'rgba(61,128,53,1.0)',
+                color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 2.0,
+                weight: 1,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(126,162,225,1.0)',
@@ -203,11 +205,11 @@
                 shape: 'diamond',
                 radius: 8.8,
                 opacity: 1,
-                color: 'rgba(61,128,53,1.0)',
+                color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 2.0,
+                weight: 1,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(152,121,229,1.0)',
@@ -220,11 +222,11 @@
                 shape: 'diamond',
                 radius: 8.8,
                 opacity: 1,
-                color: 'rgba(61,128,53,1.0)',
+                color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 2.0,
+                weight: 1,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(228,138,102,1.0)',
@@ -237,11 +239,11 @@
                 shape: 'diamond',
                 radius: 8.8,
                 opacity: 1,
-                color: 'rgba(61,128,53,1.0)',
+                color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 2.0,
+                weight: 1,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(206,48,214,1.0)',
@@ -254,11 +256,11 @@
                 shape: 'diamond',
                 radius: 8.8,
                 opacity: 1,
-                color: 'rgba(61,128,53,1.0)',
+                color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 2.0,
+                weight: 1,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(203,83,129,1.0)',
@@ -271,11 +273,11 @@
                 shape: 'diamond',
                 radius: 8.8,
                 opacity: 1,
-                color: 'rgba(61,128,53,1.0)',
+                color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 2.0,
+                weight: 1,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(114,219,146,1.0)',
@@ -288,11 +290,11 @@
                 shape: 'diamond',
                 radius: 8.8,
                 opacity: 1,
-                color: 'rgba(61,128,53,1.0)',
+                color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 2.0,
+                weight: 1,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(59,209,204,1.0)',
