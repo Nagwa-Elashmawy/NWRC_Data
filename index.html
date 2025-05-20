@@ -39,7 +39,7 @@
         <script src="js/labels.js"></script>
         <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
         <script src="js/leaflet.markercluster.js"></script>
-        <script src="data/Some_NWRC_2025_1.js"></script>
+        <script src="data/NWRC_All_Projects_2025_20250514_1.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:6
@@ -98,7 +98,7 @@
         });
         layer_GoogleMap_0;
         map.addLayer(layer_GoogleMap_0);
-        function pop_Some_NWRC_2025_1(feature, layer) {
+        function pop_NWRC_All_Projects_2025_20250514_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Institute</th>\
@@ -106,15 +106,15 @@
                     </tr>\
                     <tr>\
                         <th scope="row">Project_Nu</th>\
-                        <td>' + (feature.properties['Project_Nu'] !== null ? autolinker.link(String(feature.properties['Project_Nu']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Project_Nu">' + (feature.properties['Project_Nu'] !== null ? autolinker.link(String(feature.properties['Project_Nu']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Proj_Name</th>\
-                        <td>' + (feature.properties['Proj_Name'] !== null ? autolinker.link(String(feature.properties['Proj_Name']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Proj_Name">' + (feature.properties['Proj_Name'] !== null ? autolinker.link(String(feature.properties['Proj_Name']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Data_Type</th>\
-                        <td>' + (feature.properties['Data_Type'] !== null ? autolinker.link(String(feature.properties['Data_Type']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Data_Type">' + (feature.properties['Data_Type'] !== null ? autolinker.link(String(feature.properties['Data_Type']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Detailed_D</th>\
@@ -125,18 +125,20 @@
                         <td class="visible-with-data" id="Units">' + (feature.properties['Units'] !== null ? autolinker.link(String(feature.properties['Units']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Date_Year</th>\
-                        <td>' + (feature.properties['Date_Year'] !== null ? autolinker.link(String(feature.properties['Date_Year']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">Frequency</th>\
+                        <td class="visible-with-data" id="Frequency">' + (feature.properties['Frequency'] !== null ? autolinker.link(String(feature.properties['Frequency']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Frecuency'] !== null ? autolinker.link(String(feature.properties['Frecuency']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">Data_Sourc</th>\
+                        <td class="visible-with-data" id="Data_Sourc">' + (feature.properties['Data_Sourc'] !== null ? autolinker.link(String(feature.properties['Data_Sourc']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Study_Type</th>\
-                        <td>' + (feature.properties['Study_Type'] !== null ? autolinker.link(String(feature.properties['Study_Type']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Study_Type">' + (feature.properties['Study_Type'] !== null ? autolinker.link(String(feature.properties['Study_Type']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Vect_Ty'] !== null ? autolinker.link(String(feature.properties['Vect_Ty']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">Vectore_ty</th>\
+                        <td class="visible-with-data" id="Vectore_ty">' + (feature.properties['Vectore_ty'] !== null ? autolinker.link(String(feature.properties['Vectore_ty']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -146,11 +148,11 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Some_NWRC_2025_1_0(feature) {
+        function style_NWRC_All_Projects_2025_20250514_1_0(feature) {
             switch(String(feature.properties['Institute'])) {
-                case 'ECRI':
+                case 'CMRI':
                     return {
-                pane: 'pane_Some_NWRC_2025_1',
+                pane: 'pane_NWRC_All_Projects_2025_20250514_1',
                 shape: 'diamond',
                 radius: 8.8,
                 opacity: 1,
@@ -161,13 +163,64 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(85,203,16,1.0)',
+                fillColor: 'rgba(21,181,230,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'CoRI':
+                    return {
+                pane: 'pane_NWRC_All_Projects_2025_20250514_1',
+                shape: 'diamond',
+                radius: 8.8,
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(32,226,21,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'DRI':
+                    return {
+                pane: 'pane_NWRC_All_Projects_2025_20250514_1',
+                shape: 'diamond',
+                radius: 8.8,
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(138,36,233,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'ECRI':
+                    return {
+                pane: 'pane_NWRC_All_Projects_2025_20250514_1',
+                shape: 'diamond',
+                radius: 8.8,
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(91,141,234,1.0)',
                 interactive: true,
             }
                     break;
                 case 'HRI':
                     return {
-                pane: 'pane_Some_NWRC_2025_1',
+                pane: 'pane_NWRC_All_Projects_2025_20250514_1',
                 shape: 'diamond',
                 radius: 8.8,
                 opacity: 1,
@@ -178,13 +231,13 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(234,225,62,1.0)',
+                fillColor: 'rgba(221,97,60,1.0)',
                 interactive: true,
             }
                     break;
                 case 'MERI':
                     return {
-                pane: 'pane_Some_NWRC_2025_1',
+                pane: 'pane_NWRC_All_Projects_2025_20250514_1',
                 shape: 'diamond',
                 radius: 8.8,
                 opacity: 1,
@@ -195,13 +248,13 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(126,162,225,1.0)',
+                fillColor: 'rgba(141,230,58,1.0)',
                 interactive: true,
             }
                     break;
                 case 'NRI':
                     return {
-                pane: 'pane_Some_NWRC_2025_1',
+                pane: 'pane_NWRC_All_Projects_2025_20250514_1',
                 shape: 'diamond',
                 radius: 8.8,
                 opacity: 1,
@@ -212,13 +265,30 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(152,121,229,1.0)',
+                fillColor: 'rgba(234,178,65,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'NWRC':
+                    return {
+                pane: 'pane_NWRC_All_Projects_2025_20250514_1',
+                shape: 'diamond',
+                radius: 8.8,
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(218,83,166,1.0)',
                 interactive: true,
             }
                     break;
                 case 'RIGW':
                     return {
-                pane: 'pane_Some_NWRC_2025_1',
+                pane: 'pane_NWRC_All_Projects_2025_20250514_1',
                 shape: 'diamond',
                 radius: 8.8,
                 opacity: 1,
@@ -229,13 +299,13 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(228,138,102,1.0)',
+                fillColor: 'rgba(223,238,63,1.0)',
                 interactive: true,
             }
                     break;
                 case 'SRI':
                     return {
-                pane: 'pane_Some_NWRC_2025_1',
+                pane: 'pane_NWRC_All_Projects_2025_20250514_1',
                 shape: 'diamond',
                 radius: 8.8,
                 opacity: 1,
@@ -246,13 +316,13 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(206,48,214,1.0)',
+                fillColor: 'rgba(121,210,154,1.0)',
                 interactive: true,
             }
                     break;
                 case 'SRU':
                     return {
-                pane: 'pane_Some_NWRC_2025_1',
+                pane: 'pane_NWRC_All_Projects_2025_20250514_1',
                 shape: 'diamond',
                 radius: 8.8,
                 opacity: 1,
@@ -263,13 +333,13 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(203,83,129,1.0)',
+                fillColor: 'rgba(38,20,200,1.0)',
                 interactive: true,
             }
                     break;
                 case 'WMRI':
                     return {
-                pane: 'pane_Some_NWRC_2025_1',
+                pane: 'pane_NWRC_All_Projects_2025_20250514_1',
                 shape: 'diamond',
                 radius: 8.8,
                 opacity: 1,
@@ -280,13 +350,30 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(114,219,146,1.0)',
+                fillColor: 'rgba(129,234,213,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'WRRI':
+                    return {
+                pane: 'pane_NWRC_All_Projects_2025_20250514_1',
+                shape: 'diamond',
+                radius: 8.8,
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(193,15,202,1.0)',
                 interactive: true,
             }
                     break;
                 default:
                     return {
-                pane: 'pane_Some_NWRC_2025_1',
+                pane: 'pane_NWRC_All_Projects_2025_20250514_1',
                 shape: 'diamond',
                 radius: 8.8,
                 opacity: 1,
@@ -297,36 +384,36 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(59,209,204,1.0)',
+                fillColor: 'rgba(205,119,136,1.0)',
                 interactive: true,
             }
                     break;
             }
         }
-        map.createPane('pane_Some_NWRC_2025_1');
-        map.getPane('pane_Some_NWRC_2025_1').style.zIndex = 401;
-        map.getPane('pane_Some_NWRC_2025_1').style['mix-blend-mode'] = 'normal';
-        var layer_Some_NWRC_2025_1 = new L.geoJson(json_Some_NWRC_2025_1, {
+        map.createPane('pane_NWRC_All_Projects_2025_20250514_1');
+        map.getPane('pane_NWRC_All_Projects_2025_20250514_1').style.zIndex = 401;
+        map.getPane('pane_NWRC_All_Projects_2025_20250514_1').style['mix-blend-mode'] = 'normal';
+        var layer_NWRC_All_Projects_2025_20250514_1 = new L.geoJson(json_NWRC_All_Projects_2025_20250514_1, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Some_NWRC_2025_1',
-            layerName: 'layer_Some_NWRC_2025_1',
-            pane: 'pane_Some_NWRC_2025_1',
-            onEachFeature: pop_Some_NWRC_2025_1,
+            dataVar: 'json_NWRC_All_Projects_2025_20250514_1',
+            layerName: 'layer_NWRC_All_Projects_2025_20250514_1',
+            pane: 'pane_NWRC_All_Projects_2025_20250514_1',
+            onEachFeature: pop_NWRC_All_Projects_2025_20250514_1,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.shapeMarker(latlng, style_Some_NWRC_2025_1_0(feature));
+                return L.shapeMarker(latlng, style_NWRC_All_Projects_2025_20250514_1_0(feature));
             },
         });
-        var cluster_Some_NWRC_2025_1 = new L.MarkerClusterGroup({showCoverageOnHover: false,
+        var cluster_NWRC_All_Projects_2025_20250514_1 = new L.MarkerClusterGroup({showCoverageOnHover: false,
             spiderfyDistanceMultiplier: 2});
-        cluster_Some_NWRC_2025_1.addLayer(layer_Some_NWRC_2025_1);
+        cluster_NWRC_All_Projects_2025_20250514_1.addLayer(layer_NWRC_All_Projects_2025_20250514_1);
 
-        bounds_group.addLayer(layer_Some_NWRC_2025_1);
-        cluster_Some_NWRC_2025_1.addTo(map);
+        bounds_group.addLayer(layer_NWRC_All_Projects_2025_20250514_1);
+        cluster_NWRC_All_Projects_2025_20250514_1.addTo(map);
         var osmGeocoder = new L.Control.Geocoder({
             collapsed: true,
             position: 'topleft',
@@ -338,7 +425,7 @@
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
         var overlaysTree = [
-            {label: 'Some_NWRC_2025<br /><table><tr><td style="text-align: center;"><img src="legend/Some_NWRC_2025_1_ECRI0.png" /></td><td>ECRI</td></tr><tr><td style="text-align: center;"><img src="legend/Some_NWRC_2025_1_HRI1.png" /></td><td>HRI</td></tr><tr><td style="text-align: center;"><img src="legend/Some_NWRC_2025_1_MERI2.png" /></td><td>MERI</td></tr><tr><td style="text-align: center;"><img src="legend/Some_NWRC_2025_1_NRI3.png" /></td><td>NRI</td></tr><tr><td style="text-align: center;"><img src="legend/Some_NWRC_2025_1_RIGW4.png" /></td><td>RIGW</td></tr><tr><td style="text-align: center;"><img src="legend/Some_NWRC_2025_1_SRI5.png" /></td><td>SRI</td></tr><tr><td style="text-align: center;"><img src="legend/Some_NWRC_2025_1_SRU6.png" /></td><td>SRU</td></tr><tr><td style="text-align: center;"><img src="legend/Some_NWRC_2025_1_WMRI7.png" /></td><td>WMRI</td></tr><tr><td style="text-align: center;"><img src="legend/Some_NWRC_2025_1_8.png" /></td><td></td></tr></table>', layer: cluster_Some_NWRC_2025_1},
+            {label: 'NWRC_All_Projects_2025_20250514<br /><table><tr><td style="text-align: center;"><img src="legend/NWRC_All_Projects_2025_20250514_1_CMRI0.png" /></td><td>CMRI</td></tr><tr><td style="text-align: center;"><img src="legend/NWRC_All_Projects_2025_20250514_1_CoRI1.png" /></td><td>CoRI</td></tr><tr><td style="text-align: center;"><img src="legend/NWRC_All_Projects_2025_20250514_1_DRI2.png" /></td><td>DRI</td></tr><tr><td style="text-align: center;"><img src="legend/NWRC_All_Projects_2025_20250514_1_ECRI3.png" /></td><td>ECRI</td></tr><tr><td style="text-align: center;"><img src="legend/NWRC_All_Projects_2025_20250514_1_HRI4.png" /></td><td>HRI</td></tr><tr><td style="text-align: center;"><img src="legend/NWRC_All_Projects_2025_20250514_1_MERI5.png" /></td><td>MERI</td></tr><tr><td style="text-align: center;"><img src="legend/NWRC_All_Projects_2025_20250514_1_NRI6.png" /></td><td>NRI</td></tr><tr><td style="text-align: center;"><img src="legend/NWRC_All_Projects_2025_20250514_1_NWRC7.png" /></td><td>NWRC</td></tr><tr><td style="text-align: center;"><img src="legend/NWRC_All_Projects_2025_20250514_1_RIGW8.png" /></td><td>RIGW</td></tr><tr><td style="text-align: center;"><img src="legend/NWRC_All_Projects_2025_20250514_1_SRI9.png" /></td><td>SRI</td></tr><tr><td style="text-align: center;"><img src="legend/NWRC_All_Projects_2025_20250514_1_SRU10.png" /></td><td>SRU</td></tr><tr><td style="text-align: center;"><img src="legend/NWRC_All_Projects_2025_20250514_1_WMRI11.png" /></td><td>WMRI</td></tr><tr><td style="text-align: center;"><img src="legend/NWRC_All_Projects_2025_20250514_1_WRRI12.png" /></td><td>WRRI</td></tr><tr><td style="text-align: center;"><img src="legend/NWRC_All_Projects_2025_20250514_1_13.png" /></td><td></td></tr></table>', layer: cluster_NWRC_All_Projects_2025_20250514_1},
             {label: "Google Map", layer: layer_GoogleMap_0},]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
