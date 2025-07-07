@@ -36,10 +36,10 @@
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
         <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
-        <script src="data/StudiesByBeneficials_1.js"></script>
-        <script src="data/StudiesByFasicalYear_2.js"></script>
-        <script src="data/StudiesByProgress_3.js"></script>
-        <script src="data/StudiesByInstitute_4.js"></script>
+        <script src="data/_1.js"></script>
+        <script src="data/_2.js"></script>
+        <script src="data/_3.js"></script>
+        <script src="data/_4.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:6
@@ -98,7 +98,7 @@
         });
         layer_GoogleMap_0;
         map.addLayer(layer_GoogleMap_0);
-        function pop_StudiesByBeneficials_1(feature, layer) {
+        function pop__1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Institute</th>\
@@ -136,13 +136,13 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_StudiesByBeneficials_1_0(feature) {
+        function style__1_0(feature) {
             switch(String(feature.properties['Benef_Cate'])) {
                 case 'وزارة الموارد المائية والرى':
                     return {
-                pane: 'pane_StudiesByBeneficials_1',
+                pane: 'pane__1',
                 shape: 'diamond',
-                radius: 4.800000000000001,
+                radius: 4.8,
                 opacity: 1,
                 color: 'rgba(50,87,128,1.0)',
                 dashArray: '',
@@ -157,9 +157,9 @@
                     break;
                 case 'جهات حكومية':
                     return {
-                pane: 'pane_StudiesByBeneficials_1',
+                pane: 'pane__1',
                 shape: 'diamond',
-                radius: 4.800000000000001,
+                radius: 4.8,
                 opacity: 1,
                 color: 'rgba(50,87,128,1.0)',
                 dashArray: '',
@@ -174,9 +174,9 @@
                     break;
                 case 'جهات أخرى (افراد / مؤسسات)':
                     return {
-                pane: 'pane_StudiesByBeneficials_1',
+                pane: 'pane__1',
                 shape: 'diamond',
-                radius: 4.800000000000001,
+                radius: 4.8,
                 opacity: 1,
                 color: 'rgba(50,87,128,1.0)',
                 dashArray: '',
@@ -191,7 +191,7 @@
                     break;
                 default:
                     return {
-                pane: 'pane_StudiesByBeneficials_1',
+                pane: 'pane__1',
                 shape: 'diamond',
                 radius: 4.0,
                 opacity: 1,
@@ -208,26 +208,26 @@
                     break;
             }
         }
-        map.createPane('pane_StudiesByBeneficials_1');
-        map.getPane('pane_StudiesByBeneficials_1').style.zIndex = 401;
-        map.getPane('pane_StudiesByBeneficials_1').style['mix-blend-mode'] = 'normal';
-        var layer_StudiesByBeneficials_1 = new L.geoJson(json_StudiesByBeneficials_1, {
+        map.createPane('pane__1');
+        map.getPane('pane__1').style.zIndex = 401;
+        map.getPane('pane__1').style['mix-blend-mode'] = 'normal';
+        var layer__1 = new L.geoJson(json__1, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_StudiesByBeneficials_1',
-            layerName: 'layer_StudiesByBeneficials_1',
-            pane: 'pane_StudiesByBeneficials_1',
-            onEachFeature: pop_StudiesByBeneficials_1,
+            dataVar: 'json__1',
+            layerName: 'layer__1',
+            pane: 'pane__1',
+            onEachFeature: pop__1,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.shapeMarker(latlng, style_StudiesByBeneficials_1_0(feature));
+                return L.shapeMarker(latlng, style__1_0(feature));
             },
         });
-        bounds_group.addLayer(layer_StudiesByBeneficials_1);
-        function pop_StudiesByFasicalYear_2(feature, layer) {
+        bounds_group.addLayer(layer__1);
+        function pop__2(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Institute</th>\
@@ -261,11 +261,11 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_StudiesByFasicalYear_2_0(feature) {
+        function style__2_0(feature) {
             switch(String(feature.properties['Fiscal_yea'])) {
                 case '23/24':
                     return {
-                pane: 'pane_StudiesByFasicalYear_2',
+                pane: 'pane__2',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -281,7 +281,7 @@
                     break;
                 case '24/25':
                     return {
-                pane: 'pane_StudiesByFasicalYear_2',
+                pane: 'pane__2',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -297,7 +297,7 @@
                     break;
                 case '23/24 - 24/25':
                     return {
-                pane: 'pane_StudiesByFasicalYear_2',
+                pane: 'pane__2',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -313,7 +313,7 @@
                     break;
                 default:
                     return {
-                pane: 'pane_StudiesByFasicalYear_2',
+                pane: 'pane__2',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -329,26 +329,26 @@
                     break;
             }
         }
-        map.createPane('pane_StudiesByFasicalYear_2');
-        map.getPane('pane_StudiesByFasicalYear_2').style.zIndex = 402;
-        map.getPane('pane_StudiesByFasicalYear_2').style['mix-blend-mode'] = 'normal';
-        var layer_StudiesByFasicalYear_2 = new L.geoJson(json_StudiesByFasicalYear_2, {
+        map.createPane('pane__2');
+        map.getPane('pane__2').style.zIndex = 402;
+        map.getPane('pane__2').style['mix-blend-mode'] = 'normal';
+        var layer__2 = new L.geoJson(json__2, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_StudiesByFasicalYear_2',
-            layerName: 'layer_StudiesByFasicalYear_2',
-            pane: 'pane_StudiesByFasicalYear_2',
-            onEachFeature: pop_StudiesByFasicalYear_2,
+            dataVar: 'json__2',
+            layerName: 'layer__2',
+            pane: 'pane__2',
+            onEachFeature: pop__2,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_StudiesByFasicalYear_2_0(feature));
+                return L.circleMarker(latlng, style__2_0(feature));
             },
         });
-        bounds_group.addLayer(layer_StudiesByFasicalYear_2);
-        function pop_StudiesByProgress_3(feature, layer) {
+        bounds_group.addLayer(layer__2);
+        function pop__3(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Institute</th>\
@@ -386,11 +386,11 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_StudiesByProgress_3_0(feature) {
+        function style__3_0(feature) {
             switch(String(feature.properties['Study_Type'])) {
                 case 'تحت التنفيذ':
                     return {
-                pane: 'pane_StudiesByProgress_3',
+                pane: 'pane__3',
                 shape: 'triangle',
                 radius: 4.8,
                 opacity: 1,
@@ -407,7 +407,7 @@
                     break;
                 case 'دراسة منتهية':
                     return {
-                pane: 'pane_StudiesByProgress_3',
+                pane: 'pane__3',
                 shape: 'triangle',
                 radius: 4.8,
                 opacity: 1,
@@ -424,7 +424,7 @@
                     break;
                 case 'مستحقات مالية':
                     return {
-                pane: 'pane_StudiesByProgress_3',
+                pane: 'pane__3',
                 shape: 'triangle',
                 radius: 4.8,
                 opacity: 1,
@@ -441,7 +441,7 @@
                     break;
                 default:
                     return {
-                pane: 'pane_StudiesByProgress_3',
+                pane: 'pane__3',
                 shape: 'triangle',
                 radius: 4.0,
                 opacity: 1,
@@ -458,26 +458,26 @@
                     break;
             }
         }
-        map.createPane('pane_StudiesByProgress_3');
-        map.getPane('pane_StudiesByProgress_3').style.zIndex = 403;
-        map.getPane('pane_StudiesByProgress_3').style['mix-blend-mode'] = 'normal';
-        var layer_StudiesByProgress_3 = new L.geoJson(json_StudiesByProgress_3, {
+        map.createPane('pane__3');
+        map.getPane('pane__3').style.zIndex = 403;
+        map.getPane('pane__3').style['mix-blend-mode'] = 'normal';
+        var layer__3 = new L.geoJson(json__3, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_StudiesByProgress_3',
-            layerName: 'layer_StudiesByProgress_3',
-            pane: 'pane_StudiesByProgress_3',
-            onEachFeature: pop_StudiesByProgress_3,
+            dataVar: 'json__3',
+            layerName: 'layer__3',
+            pane: 'pane__3',
+            onEachFeature: pop__3,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.shapeMarker(latlng, style_StudiesByProgress_3_0(feature));
+                return L.shapeMarker(latlng, style__3_0(feature));
             },
         });
-        bounds_group.addLayer(layer_StudiesByProgress_3);
-        function pop_StudiesByInstitute_4(feature, layer) {
+        bounds_group.addLayer(layer__3);
+        function pop__4(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Institute</th>\
@@ -515,11 +515,11 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_StudiesByInstitute_4_0(feature) {
+        function style__4_0(feature) {
             switch(String(feature.properties['Institute'])) {
                 case 'CLEQM':
                     return {
-                pane: 'pane_StudiesByInstitute_4',
+                pane: 'pane__4',
                 shape: 'diamond',
                 radius: 4.0,
                 opacity: 1,
@@ -536,7 +536,7 @@
                     break;
                 case 'CMRI':
                     return {
-                pane: 'pane_StudiesByInstitute_4',
+                pane: 'pane__4',
                 shape: 'diamond',
                 radius: 4.0,
                 opacity: 1,
@@ -553,7 +553,7 @@
                     break;
                 case 'CORI':
                     return {
-                pane: 'pane_StudiesByInstitute_4',
+                pane: 'pane__4',
                 shape: 'diamond',
                 radius: 4.0,
                 opacity: 1,
@@ -570,7 +570,7 @@
                     break;
                 case 'CRI':
                     return {
-                pane: 'pane_StudiesByInstitute_4',
+                pane: 'pane__4',
                 shape: 'diamond',
                 radius: 4.0,
                 opacity: 1,
@@ -587,7 +587,7 @@
                     break;
                 case 'DRI':
                     return {
-                pane: 'pane_StudiesByInstitute_4',
+                pane: 'pane__4',
                 shape: 'diamond',
                 radius: 4.0,
                 opacity: 1,
@@ -604,7 +604,7 @@
                     break;
                 case 'ECRI':
                     return {
-                pane: 'pane_StudiesByInstitute_4',
+                pane: 'pane__4',
                 shape: 'diamond',
                 radius: 4.0,
                 opacity: 1,
@@ -621,7 +621,7 @@
                     break;
                 case 'HRI':
                     return {
-                pane: 'pane_StudiesByInstitute_4',
+                pane: 'pane__4',
                 shape: 'diamond',
                 radius: 4.0,
                 opacity: 1,
@@ -638,7 +638,7 @@
                     break;
                 case 'MERI':
                     return {
-                pane: 'pane_StudiesByInstitute_4',
+                pane: 'pane__4',
                 shape: 'diamond',
                 radius: 4.0,
                 opacity: 1,
@@ -655,7 +655,7 @@
                     break;
                 case 'NRI':
                     return {
-                pane: 'pane_StudiesByInstitute_4',
+                pane: 'pane__4',
                 shape: 'diamond',
                 radius: 4.0,
                 opacity: 1,
@@ -672,7 +672,7 @@
                     break;
                 case 'NWRC':
                     return {
-                pane: 'pane_StudiesByInstitute_4',
+                pane: 'pane__4',
                 shape: 'diamond',
                 radius: 4.0,
                 opacity: 1,
@@ -689,7 +689,7 @@
                     break;
                 case 'RIGW':
                     return {
-                pane: 'pane_StudiesByInstitute_4',
+                pane: 'pane__4',
                 shape: 'diamond',
                 radius: 4.0,
                 opacity: 1,
@@ -706,7 +706,7 @@
                     break;
                 case 'SRI':
                     return {
-                pane: 'pane_StudiesByInstitute_4',
+                pane: 'pane__4',
                 shape: 'diamond',
                 radius: 4.0,
                 opacity: 1,
@@ -723,7 +723,7 @@
                     break;
                 case 'WMRI':
                     return {
-                pane: 'pane_StudiesByInstitute_4',
+                pane: 'pane__4',
                 shape: 'diamond',
                 radius: 4.0,
                 opacity: 1,
@@ -740,7 +740,7 @@
                     break;
                 case 'WRRI':
                     return {
-                pane: 'pane_StudiesByInstitute_4',
+                pane: 'pane__4',
                 shape: 'diamond',
                 radius: 4.0,
                 opacity: 1,
@@ -757,7 +757,7 @@
                     break;
                 default:
                     return {
-                pane: 'pane_StudiesByInstitute_4',
+                pane: 'pane__4',
                 shape: 'diamond',
                 radius: 4.0,
                 opacity: 1,
@@ -774,26 +774,26 @@
                     break;
             }
         }
-        map.createPane('pane_StudiesByInstitute_4');
-        map.getPane('pane_StudiesByInstitute_4').style.zIndex = 404;
-        map.getPane('pane_StudiesByInstitute_4').style['mix-blend-mode'] = 'normal';
-        var layer_StudiesByInstitute_4 = new L.geoJson(json_StudiesByInstitute_4, {
+        map.createPane('pane__4');
+        map.getPane('pane__4').style.zIndex = 404;
+        map.getPane('pane__4').style['mix-blend-mode'] = 'normal';
+        var layer__4 = new L.geoJson(json__4, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_StudiesByInstitute_4',
-            layerName: 'layer_StudiesByInstitute_4',
-            pane: 'pane_StudiesByInstitute_4',
-            onEachFeature: pop_StudiesByInstitute_4,
+            dataVar: 'json__4',
+            layerName: 'layer__4',
+            pane: 'pane__4',
+            onEachFeature: pop__4,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.shapeMarker(latlng, style_StudiesByInstitute_4_0(feature));
+                return L.shapeMarker(latlng, style__4_0(feature));
             },
         });
-        bounds_group.addLayer(layer_StudiesByInstitute_4);
-        map.addLayer(layer_StudiesByInstitute_4);
+        bounds_group.addLayer(layer__4);
+        map.addLayer(layer__4);
         var osmGeocoder = new L.Control.Geocoder({
             collapsed: true,
             position: 'topleft',
@@ -805,10 +805,10 @@
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
         var overlaysTree = [
-            {label: 'Studies By Institute<br /><table><tr><td style="text-align: center;"><img src="legend/StudiesByInstitute_4_CLEQM0.png" /></td><td>CLEQM</td></tr><tr><td style="text-align: center;"><img src="legend/StudiesByInstitute_4_CMRI1.png" /></td><td>CMRI</td></tr><tr><td style="text-align: center;"><img src="legend/StudiesByInstitute_4_CORI2.png" /></td><td>CORI</td></tr><tr><td style="text-align: center;"><img src="legend/StudiesByInstitute_4_CRI3.png" /></td><td>CRI</td></tr><tr><td style="text-align: center;"><img src="legend/StudiesByInstitute_4_DRI4.png" /></td><td>DRI</td></tr><tr><td style="text-align: center;"><img src="legend/StudiesByInstitute_4_ECRI5.png" /></td><td>ECRI</td></tr><tr><td style="text-align: center;"><img src="legend/StudiesByInstitute_4_HRI6.png" /></td><td>HRI</td></tr><tr><td style="text-align: center;"><img src="legend/StudiesByInstitute_4_MERI7.png" /></td><td>MERI</td></tr><tr><td style="text-align: center;"><img src="legend/StudiesByInstitute_4_NRI8.png" /></td><td>NRI</td></tr><tr><td style="text-align: center;"><img src="legend/StudiesByInstitute_4_NWRC9.png" /></td><td>NWRC</td></tr><tr><td style="text-align: center;"><img src="legend/StudiesByInstitute_4_RIGW10.png" /></td><td>RIGW</td></tr><tr><td style="text-align: center;"><img src="legend/StudiesByInstitute_4_SRI11.png" /></td><td>SRI</td></tr><tr><td style="text-align: center;"><img src="legend/StudiesByInstitute_4_WMRI12.png" /></td><td>WMRI</td></tr><tr><td style="text-align: center;"><img src="legend/StudiesByInstitute_4_WRRI13.png" /></td><td>WRRI</td></tr><tr><td style="text-align: center;"><img src="legend/StudiesByInstitute_4_14.png" /></td><td></td></tr></table>', layer: layer_StudiesByInstitute_4},
-            {label: 'Studies By Progress<br /><table><tr><td style="text-align: center;"><img src="legend/StudiesByProgress_3_تحتالتنفيذ0.png" /></td><td>تحت التنفيذ</td></tr><tr><td style="text-align: center;"><img src="legend/StudiesByProgress_3_دراسةمنتهية1.png" /></td><td>دراسة منتهية</td></tr><tr><td style="text-align: center;"><img src="legend/StudiesByProgress_3_دراسةمنتهيةمستحقاتمالية2.png" /></td><td>دراسة منتهية-مستحقات مالية</td></tr><tr><td style="text-align: center;"><img src="legend/StudiesByProgress_3_3.png" /></td><td></td></tr></table>', layer: layer_StudiesByProgress_3},
-            {label: 'Studies By Fasical Year<br /><table><tr><td style="text-align: center;"><img src="legend/StudiesByFasicalYear_2_23240.png" /></td><td>23/24</td></tr><tr><td style="text-align: center;"><img src="legend/StudiesByFasicalYear_2_24251.png" /></td><td>24/25</td></tr><tr><td style="text-align: center;"><img src="legend/StudiesByFasicalYear_2_232424252.png" /></td><td>23/24 - 24/25</td></tr><tr><td style="text-align: center;"><img src="legend/StudiesByFasicalYear_2_3.png" /></td><td></td></tr></table>', layer: layer_StudiesByFasicalYear_2},
-            {label: 'Studies By Beneficials<br /><table><tr><td style="text-align: center;"><img src="legend/StudiesByBeneficials_1_وزارةالمواردالمائيةوالرى0.png" /></td><td>وزارة الموارد المائية والرى</td></tr><tr><td style="text-align: center;"><img src="legend/StudiesByBeneficials_1_جهاتحكومية1.png" /></td><td>جهات حكومية</td></tr><tr><td style="text-align: center;"><img src="legend/StudiesByBeneficials_1_جهاتأخرىافرادمؤسسات2.png" /></td><td>جهات أخرى (افراد / مؤسسات)</td></tr><tr><td style="text-align: center;"><img src="legend/StudiesByBeneficials_1_3.png" /></td><td></td></tr></table>', layer: layer_StudiesByBeneficials_1},
+            {label: 'المعاهد<br /><table><tr><td style="text-align: center;"><img src="legend/_4_CLEQM0.png" /></td><td>CLEQM</td></tr><tr><td style="text-align: center;"><img src="legend/_4_CMRI1.png" /></td><td>CMRI</td></tr><tr><td style="text-align: center;"><img src="legend/_4_CORI2.png" /></td><td>CORI</td></tr><tr><td style="text-align: center;"><img src="legend/_4_CRI3.png" /></td><td>CRI</td></tr><tr><td style="text-align: center;"><img src="legend/_4_DRI4.png" /></td><td>DRI</td></tr><tr><td style="text-align: center;"><img src="legend/_4_ECRI5.png" /></td><td>ECRI</td></tr><tr><td style="text-align: center;"><img src="legend/_4_HRI6.png" /></td><td>HRI</td></tr><tr><td style="text-align: center;"><img src="legend/_4_MERI7.png" /></td><td>MERI</td></tr><tr><td style="text-align: center;"><img src="legend/_4_NRI8.png" /></td><td>NRI</td></tr><tr><td style="text-align: center;"><img src="legend/_4_NWRC9.png" /></td><td>NWRC</td></tr><tr><td style="text-align: center;"><img src="legend/_4_RIGW10.png" /></td><td>RIGW</td></tr><tr><td style="text-align: center;"><img src="legend/_4_SRI11.png" /></td><td>SRI</td></tr><tr><td style="text-align: center;"><img src="legend/_4_WMRI12.png" /></td><td>WMRI</td></tr><tr><td style="text-align: center;"><img src="legend/_4_WRRI13.png" /></td><td>WRRI</td></tr><tr><td style="text-align: center;"><img src="legend/_4_14.png" /></td><td></td></tr></table>', layer: layer__4},
+            {label: 'الإنجاز<br /><table><tr><td style="text-align: center;"><img src="legend/_3_تحتالتنفيذ0.png" /></td><td>تحت التنفيذ</td></tr><tr><td style="text-align: center;"><img src="legend/_3_دراسةمنتهية1.png" /></td><td>دراسة منتهية</td></tr><tr><td style="text-align: center;"><img src="legend/_3_دراسةمنتهيةمستحقاتمالية2.png" /></td><td>دراسة منتهية-مستحقات مالية</td></tr><tr><td style="text-align: center;"><img src="legend/_3_3.png" /></td><td></td></tr></table>', layer: layer__3},
+            {label: 'العام المالي<br /><table><tr><td style="text-align: center;"><img src="legend/_2_23240.png" /></td><td>23/24</td></tr><tr><td style="text-align: center;"><img src="legend/_2_24251.png" /></td><td>24/25</td></tr><tr><td style="text-align: center;"><img src="legend/_2_232424252.png" /></td><td>23/24 - 24/25</td></tr><tr><td style="text-align: center;"><img src="legend/_2_3.png" /></td><td></td></tr></table>', layer: layer__2},
+            {label: 'الجهة المستفيدة<br /><table><tr><td style="text-align: center;"><img src="legend/_1_وزارةالمواردالمائيةوالرى0.png" /></td><td>وزارة الموارد المائية والرى</td></tr><tr><td style="text-align: center;"><img src="legend/_1_جهاتحكومية1.png" /></td><td>جهات حكومية</td></tr><tr><td style="text-align: center;"><img src="legend/_1_جهاتأخرىافرادمؤسسات2.png" /></td><td>جهات أخرى (افراد / مؤسسات)</td></tr><tr><td style="text-align: center;"><img src="legend/_1_3.png" /></td><td></td></tr></table>', layer: layer__1},
             {label: "Google Map", layer: layer_GoogleMap_0},]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
